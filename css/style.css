@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Pretendard', sans-serif;
+  background-color: #f9f9f9;
+  color: #222;
+}
+
+header {
+  background-color: white; /* 배경을 흰색으로 */
+  color: white;
+  padding: 1rem 0;
+}
+
+header .container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 50px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-list a {
+  color: #004c97; /* 메뉴 글씨 색을 파란색으로 */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.what {
+  position: relative;
+  text-align: center;
+}
+
+/*index의 소개 베너 부분*/
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.banner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #222;  /* 거의 검정 */
+  text-align: center;
+  padding: 2rem;
+  max-width: 800px;
+  text-shadow: 0 0 2px rgba(255,255,255,0.3); /* 반대로 흰 테두리 느낌 */
+}
+
+.hero-text h1 {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -1px;
+}
+
+.hero-text p {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/*index의 card 부분*/
+.cards-section {
+  background-color: #f7f9fc;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.cards-header span {
+  font-size: 18px;
+  font-weight: 500;
+  color: #004c97;
+  display: inline-block;
+  margin-bottom: 3rem;
+  letter-spacing: 0.05em;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 0.7rem 2rem;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  width: 300px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid #004c97;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+  font-size: 20px;
+  margin-bottom: 1rem;
+  color: #004c97;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+
+
+footer {
+  background-color: #0a0f2c;
+  color: white;
+  /*text-align: center;*/
+  padding: 3rem;
+  margin-top: 2rem;
+  padding-left: 10rem; 
+}
+
+.footer-logo {
+  width: 200px;   /* 기존보다 크게 (예: 120px → 180px) */
+  height: auto;   /* 비율 유지 */
+}
+
+.spacer {
+  margin: 1rem 0;
+}
+
+.footer-logo {
+  width: 120px; /* 적절한 로고 크기 조절 */
+  height: auto;
+}
+
+/*location 관련*/
+.location {
+  background-color: #f9f9f9;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.location-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.location-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #004c97;
+}
+
+.location-subtext {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.map-box {
+  margin-bottom: 2rem;
+}
+
+.location-info {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 15px;
+  color: #333;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.location-info h3 {
+  font-size: 18px;
+  margin-bottom: 1rem;
+  color: #004c97;
+}
+
+.location-info p {
+  margin: 0.4rem 0;
+}
+
+.location-info h3:nth-of-type(2) {
+  margin-top: 2rem; /* 또는 원하는 크기 (예: 32px 등) */
+}
