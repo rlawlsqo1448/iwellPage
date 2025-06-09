@@ -1,3 +1,6 @@
+/* =============================
+   기본 설정
+============================= */
 * {
   margin: 0;
   padding: 0;
@@ -10,10 +13,17 @@ body {
   color: #222;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* =============================
+   헤더
+============================= */
 header {
-  background-color: white; /* 배경을 흰색으로 */
+  background-color: white;
   color: white;
-  padding: 1rem 0;
+  padding: 1rem 10vw;
 }
 
 header .container {
@@ -34,17 +44,75 @@ header .container {
   gap: 1.5rem;
 }
 
+.nav-list li {
+  position: relative;
+}
+
 .nav-list a {
-  color: #004c97; /* 메뉴 글씨 색을 파란색으로 */
+  color: #004c97;
   text-decoration: none;
   font-weight: bold;
 }
 
-.what {
-  position: relative;
-  text-align: center;
+/* 드롭다운 메뉴 */
+.dropdown {
+  list-style: none;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-size: 0.9rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0.5rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  min-width: 200px;
 }
-/*index의 소개 베너 부분*/
+
+.dropdown li {
+  padding: 0.6rem 1rem;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown li:last-child {
+  border-bottom: none;
+}
+
+.dropdown li:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+.nav-list li:hover .dropdown {
+  background-color: #e9ecef;
+  display: block;
+}
+
+/* =============================
+   메인 - Hero 섹션
+============================= */
+.what {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.what img {
+  width: 100%;         /* 부모 너비에 따라 자동 줄어듦 */
+  max-width: 900px;    /* 최대 크기 제한 */
+  height: auto;        /* 비율 유지 */
+  display: block;
+  margin: 0 auto;
+}
+
 
 .hero {
   position: relative;
@@ -64,11 +132,11 @@ header .container {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #222;  /* 거의 검정 */
+  color: #222;
   text-align: center;
   padding: 2rem;
   max-width: 800px;
-  text-shadow: 0 0 2px rgba(255,255,255,0.3); /* 반대로 흰 테두리 느낌 */
+  text-shadow: 0 0 2px rgba(255,255,255,0.3);
 }
 
 .hero-text h1 {
@@ -84,26 +152,42 @@ header .container {
   font-size: 18px;
   font-weight: 400;
   line-height: 1.6;
-  margin: 0;
 }
 
-/*index의 card 부분*/
+/* =============================
+   카드 섹션
+============================= */
 .cards-section {
   background-color: #f7f9fc;
   padding-top: 2rem;
   text-align: center;
 }
 
+.cards-header {
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+  padding-top: 1rem;
+}
+
 .cards-header span {
   font-size: 18px;
   font-weight: 500;
   color: #004c97;
-  display: inline-block;
-  margin-bottom: 3rem;
-  letter-spacing: 0.05em;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   padding: 0.7rem 2rem;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  margin-bottom: 3rem;
+}
+
+.cards-header h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #343a40;
+  border-bottom: 2px solid #dee2e6;
+  display: inline-block;
+  padding-bottom: 0.5rem;
 }
 
 .cards {
@@ -114,7 +198,7 @@ header .container {
 }
 
 .card {
-  background-color: #ffffff;
+  background-color: #fff;
   padding: 2.5rem 2rem;
   border-radius: 16px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -142,31 +226,20 @@ header .container {
   line-height: 1.6;
 }
 
-
-footer {
-  background-color: #0a0f2c;
-  color: white;
-  /*text-align: center;*/
-  padding: 3rem;
-  margin-top: 2rem;
-  padding-left: 10rem; 
+.pic-card {
+  text-align: center;
 }
 
-.footer-logo {
-  width: 200px;   /* 기존보다 크게 (예: 120px → 180px) */
-  height: auto;   /* 비율 유지 */
-}
-
-.spacer {
-  margin: 1rem 0;
-}
-
-.footer-logo {
-  width: 120px; /* 적절한 로고 크기 조절 */
+.whattodo {
+  max-width: 100%;
   height: auto;
+  border-radius: 8px;
+  padding-bottom: 2rem;
 }
 
-/*location 관련*/
+/* =============================
+   오시는 길 (location)
+============================= */
 .location {
   background-color: #f9f9f9;
   padding: 3rem 1rem;
@@ -217,73 +290,79 @@ footer {
 }
 
 .location-info h3:nth-of-type(2) {
-  margin-top: 2rem; /* 또는 원하는 크기 (예: 32px 등) */
-}
-
-.cards-header {
-  text-align: center;
   margin-top: 2rem;
 }
 
-
-.cards-header {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  padding-top: 1rem;
+/* =============================
+   푸터
+============================= */
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem 3rem;
+  padding-left: 20vw;  /* 다시 추가 */
+  background-color: #222;
+  color: #fff;
+  align-items: flex-start;
 }
 
-.cards-header h3 {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #343a40;
-  border-bottom: 2px solid #dee2e6;
-  display: inline-block;
-  padding-bottom: 0.5rem;
-  margin: 0;
+.footer-left {
+  margin-right: 2rem;
 }
 
-.pic-card {
-  text-align: center;
+.footer-logo {
+  height: 60px;
 }
 
-
-.whattodo {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  padding-bottom: 2rem;
+.footer-main {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
-.nav-list li {
-  position: relative;
+.footer-right {
+  font-size: 0.9rem;
+  color: #ccc;
+  min-width: 300px;
 }
 
-.dropdown {
-  list-style: none; /* ✅ 동그라미 제거 */
+.footer-right p {
+  margin: 0.3rem 0;
+}
+
+footer .copyright {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.related-site {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.related-site select {
+  width: 150px;
+  height: 40px;
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background-color: #fff;
+  cursor: pointer;
+  appearance: none; /* 브라우저 기본 화살표 제거 */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23333' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 12px 8px;
+}
+
+.hidden {
   display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  font-size: 0.9rem;           /* ✅ 더 작게 */
-  background-color: #f9f9f9;   /* ✅ 연한 배경색으로 상위와 구분 */
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 0.5rem 0;
-  z-index: 999;
 }
 
-.dropdown li {
-  color: #333;
-  white-space: nowrap;
-  padding: 0.4rem 1rem;
-}
-
-.nav-list li:hover .dropdown {
-  background-color: #e9ecef;  /* ✅ hover 시 살짝 강조 */
-  display: block;
-}
-
-/* 부드러운 스크롤 */
-html {
-  scroll-behavior: smooth;
+.spacer {
+  margin: 1rem 0;
 }

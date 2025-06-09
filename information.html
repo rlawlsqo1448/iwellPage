@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Iwell - 지속가능한 미래를 함께</title>
-        <link rel="stylesheet" href="css/style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Iwell - 지속가능한 미래를 함께</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
     </head>
     <body>
-        <header>
+
+    <!-- 헤더 -->
+    <header>
         <div class="container">
-            <a href="index.html">
-            <img src="images/blue.png" alt="회사 로고" class="logo">
-            <nav>
-                <ul class="nav-list">
-                    <li><a href="index.html">회사소개</a></li><li>
-                    <a href="#">사업안내</a>
-                    <ul class="dropdown">
-                        <li><a href="#energy">중소기업 에너지 진단</a></li>
-                        <li><a href="#government">정부지원사업</a></li>
-                        <li><a href="#enms">에너지 경영 시스템</a></li>
-                        <li><a href="#esg">ESG 대응</a></li>
-                    </ul>
-                    </li>
-                    <li><a href="location.html">오시는길</a></li>
+        <a href="index.html">
+            <img src="images/blue.png" alt="회사 로고" class="logo" />
+        </a>
+        <nav>
+            <ul class="nav-list">
+            <li><a href="index.html">회사소개</a></li>
+            <li>
+                <a href="#">사업안내</a>
+                <ul class="dropdown">
+                <li><a href="information.html#energy">중소기업 에너지 진단</a></li>
+                <li><a href="information.html#government">정부지원사업</a></li>
+                <li><a href="information.html#enms">에너지 경영 시스템</a></li>
+                <li><a href="information.html#esg">ESG 대응</a></li>
                 </ul>
-            </nav>  
+            </li>
+            <li><a href="location.html">오시는길</a></li>
+            </ul>
+        </nav>
         </div>
-        </header>
+    </header>
+
+    <!-- 사업 안내내 -->
     <div class="business-section" id="energy">
     <div class="cards-header">
         <h3>중소기업 에너지 진단 및 컨설팅</h3>
@@ -64,18 +70,47 @@
     </section>
     </div>
 
-        <footer>
-            <div class="footer-container">
-                <img src="images/white.png" alt="회사 로고" class="footer-logo">
-                <div class="footer-text">
-                    <p>주식회사 아이웰 | 대표자 배성목</p>
-                    <p>경상남도 양산시 양산역9길 17, 306호(중부동, 비에스 빌딩)</p>
-                    <p>ahr93@naver.com | 010-9561-8847</p>
-                    <p class="spacer"></p> <!-- 여백용 빈 줄 -->
-                    <p>Copyrightⓒ2025 주식회사 아이웰 All Rights Reserced.</p>
-                </div>
+    <!-- 푸터 -->
+    <footer>
+        <div class="footer-container">
+        <div class="footer-left">
+            <img src="images/white.png" alt="회사 로고" class="footer-logo" />
+        </div>
+
+        <div class="footer-main">
+            <!-- 회사 정보 -->
+            <div class="footer-right">
+            <p><strong>주식회사 아이웰</strong> | 대표자 배성목</p>
+            <p>경상남도 양산시 양산역9길 17, 306호 (중부동, 비에스빌딩)</p>
+            <p>Email: ahr93@naver.com | 전화: 010-9561-8847</p>
+            <p>사업자등록번호: 888-86-03003</p>
+            <p class="copyright">&copy; 2025 주식회사 아이웰 All Rights Reserved.</p>
             </div>
-        </footer>
-        <script src="js/script.js"></script>
-    </body>
+
+            <!-- 관련 사이트 드롭다운 -->
+            <div class="related-site">
+            <label for="family-site">관련 사이트</label><br />
+            <select id="family-site" onchange="goToSite(this)">
+                <option selected disabled>사이트 바로가기</option>
+                <option value="https://www.mssmiv.com/portal/Main">혁신 바우처</option>
+                <option value="https://www.energy.or.kr/">한국에너지공단</option>
+                <option value="https://pp.kepco.co.kr/">한전 파워플래너</option>
+                <option value="https://www.g2b.go.kr/">나라장터</option>
+                <option value="https://www.bojo.go.kr/bojo.do">e나라도움</option>
+            </select>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+            function goToSite(selectElement) {
+                const url = selectElement.value;
+                if (url) {
+                    window.open(url, "_blank");
+                }
+            }
+        </script>
+</body>
 </html>
