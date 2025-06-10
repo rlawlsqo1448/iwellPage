@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Iwell - 지속가능한 미래를 함께</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <header>
+  <div class="container">
+    <a href="index.html">
+      <img src="images/blue.png" alt="회사 로고" class="logo" />
+    </a>
+    <nav>
+      <ul class="nav-list">
+        <li>
+          <a href="#">회사소개</a>
+          <ul class="dropdown">
+            <li><a href="hello.html">인사말</a></li>
+            <li><a href="organization.html">조직도</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">사업안내</a>
+          <ul class="dropdown">
+            <li><a href="information.html#energy">중소기업 에너지 진단</a></li>
+            <li><a href="information.html#government">정부지원사업</a></li>
+            <li><a href="information.html#enms">에너지 경영 시스템</a></li>
+            <li><a href="information.html#esg">ESG 대응</a></li>
+          </ul>
+        </li>
+        <li><a href="notice.html">공지사항</a></li>
+        <li><a href="location.html">오시는길</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+  <!-- 본문 -->
+<section class="contact-section">
+  <div class="container">
+    <h2 class="section-title">Contact Us</h2>
+    <p>문의하실 내용을 작성해 주시면 신속히 답변드리겠습니다.</p>
+    <form class="contact-form" onsubmit="submitContactForm(event)">
+      <label for="name">이름 *</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">이메일 *</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="subject">제목 *</label>
+      <input type="text" id="subject" name="subject" required>
+
+      <label for="message">문의 내용 *</label>
+      <textarea id="message" name="message" rows="6" required></textarea>
+
+      <button type="submit">문의하기</button>
+    </form>
+    <p id="form-status" class="form-status"></p>
+  </div>
+</section>
+  <!-- 푸터 -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <img src="images/white.png" alt="회사 로고" class="footer-logo" />
+      </div>
+
+      <div class="footer-main">
+        <!-- 회사 정보 -->
+        <div class="footer-right">
+          <p><strong>주식회사 아이웰</strong> | 대표자 배성목</p>
+          <p>경상남도 양산시 양산역9길 17, 306호 (중부동, 비에스빌딩)</p>
+          <p>Email: ahr93@naver.com | 전화: 010-9561-8847</p>
+          <p>사업자등록번호: 888-86-03003</p>
+          <p class="copyright">&copy; 2025 주식회사 아이웰 All Rights Reserved.</p>
+        </div>
+
+        <!-- 관련 사이트 드롭다운 -->
+        <div class="related-site">
+          <label for="family-site">관련 사이트</label><br />
+          <select id="family-site" onchange="goToSite(this)">
+            <option selected disabled>사이트 바로가기</option>
+            <option value="https://www.mssmiv.com/portal/Main">혁신 바우처</option>
+            <option value="https://www.energy.or.kr/">한국에너지공단</option>
+            <option value="https://pp.kepco.co.kr/">한전 파워플래너</option>
+            <option value="https://www.g2b.go.kr/">나라장터</option>
+            <option value="https://www.bojo.go.kr/bojo.do">e나라도움</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+		function goToSite(selectElement) {
+			const url = selectElement.value;
+			if (url) {
+				window.open(url, "_blank");
+			}
+		}
+	</script>
+    <script>
+  function submitContactForm(event) {
+    event.preventDefault(); // 실제 전송 막고 메시지 표시
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+
+    if (!name || !email || !subject || !message) {
+      document.getElementById("form-status").innerText = "모든 항목을 입력해 주세요.";
+      return;
+    }
+
+    // 실제 이메일 전송 기능은 백엔드 연동 필요
+    document.getElementById("form-status").innerText = "문의가 정상적으로 접수되었습니다. 감사합니다!";
+    
+    // 입력값 초기화
+    event.target.reset();
+  }
+</script>
+
+</body>
+</html>
