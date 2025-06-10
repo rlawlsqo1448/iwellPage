@@ -1,2 +1,6 @@
-console.log("사이트가 로드되었습니다");
-
+<script>
+  function toggleMobileMenu() {
+    const nav = document.querySelector('.main-nav');
+    nav.classList.toggle('open');
+  }
+</script>

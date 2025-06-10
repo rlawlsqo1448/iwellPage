@@ -9,14 +9,20 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 </head>
 <body>
-
-  <!-- 헤더 -->
-  <header>
+<!-- 헤더 -->
+<header>
   <div class="container">
     <a href="index.html">
       <img src="images/blue.png" alt="회사 로고" class="logo" />
     </a>
-    <nav>
+    <!-- 햄버거 버튼 (모바일에서만 보임) -->
+    <div class="hamburger" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <!-- 네비게이션 -->
+    <nav class="main-nav">
       <ul class="nav-list">
         <li>
           <a href="#">회사소개</a>
