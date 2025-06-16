@@ -15,12 +15,12 @@
     <a href="index.html">
       <img src="images/blue.png" alt="회사 로고" class="logo" />
     </a>
-    <!-- 햄버거 버튼 (모바일에서만 보임) -->
-    <div class="hamburger" onclick="toggleMobileMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+    <!-- ✅ 추가: 햄버거 버튼 -->
+<div class="hamburger" onclick="toggleMobileMenu()">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
     <!-- 네비게이션 -->
     <nav class="main-nav">
       <ul class="nav-list">
@@ -125,6 +125,30 @@
 				window.open(url, "_blank");
 			}
 		}
-	</script>
+	</script><!-- ✅ 햄버거 메뉴 토글 함수 -->
+<script>
+  function toggleMobileMenu() {
+    const nav = document.querySelector('.main-nav');
+    nav.classList.toggle('open');
+  }
+</script>
+
+<!-- ✅ 모바일에서 드롭다운 클릭 열기 -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.nav-list > li > a').forEach(link => {
+      link.addEventListener('click', function (e) {
+        if (window.innerWidth <= 768) {
+          const parentLi = this.parentElement;
+          const dropdown = parentLi.querySelector('.dropdown');
+          if (dropdown) {
+            e.preventDefault();
+            parentLi.classList.toggle('open');
+          }
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>
