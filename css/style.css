@@ -7,14 +7,22 @@
   box-sizing: border-box;
 }
 
+:root {
+  color-scheme: light;
+}
+
 body {
   font-family: 'Pretendard', sans-serif;
   background-color: #f9f9f9;
   color: #222;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 html {
   scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* =============================
@@ -444,6 +452,7 @@ header .container {
 /* =============================
    CEO의 말 (hello)
 ============================= */
+
 .ceo-message {
   background-color: #f7f9fc;
   padding: 3rem 1rem;
@@ -479,6 +488,7 @@ header .container {
 /* =============================
    조직도 (organization)
 ============================= */
+
 .org-chart {
   background-color: #f9f9f9;
   padding: 3rem 1rem;
@@ -674,7 +684,7 @@ header .container {
 }
 
 /* =============================
-   푸터
+  푸터
 ============================= */
 .footer-container {
   display: flex;
