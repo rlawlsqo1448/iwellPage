@@ -487,6 +487,39 @@ header .container {
   margin-top: 2rem;
 }
 
+.ceo-signature-block {
+  text-align: right;
+  margin-top: 3rem;
+  margin-right: 1rem;
+}
+
+.ceo-title {
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.ceo-name-wrap {
+  position: relative;
+  display: inline-block;
+}
+
+.ceo-name {
+  font-weight: bold;
+  font-size: 1.6rem;
+  position: relative;
+  z-index: 2;
+}
+
+.ceo-signature-img {
+  position: absolute;
+  right: -110px;       /* 이름 오른쪽에 겹쳐지도록 위치 조절 */
+  top: -20px;          /* 수직 위치 조정 */
+  height: 90px;        /* 원하는 크기로 조절 가능 */
+  opacity: 0.95;       /* 자연스러움 */
+  z-index: 1;          /* 이름 뒤에 표시 */
+  pointer-events: none;
+}
 
 /* =============================
    조직도 (organization)
