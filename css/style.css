@@ -7,6 +7,8 @@
   box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
 :root {
   color-scheme: light;
 }
@@ -218,6 +220,71 @@ header .container {
 /* =============================
    메인 - Hero 섹션
 ============================= */
+.section-divider {
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1); /* 약한 검정색 */
+  margin: 1rem auto;
+  width: 30%;
+}
+
+.info-section {
+  padding: 4rem 1rem;
+}
+
+.info-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.info-image img {
+  max-width: 800px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.info-text {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.info-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.info-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.info-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border: 2px solid #000;
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.info-button:hover {
+  background: #000;
+  color: #fff;
+}
+
+
+
 .what {
   text-align: center;
   padding: 2rem 1rem;
@@ -350,6 +417,8 @@ header .container {
 
 .pic-card {
   text-align: center;
+  max-width: 1200px;
+  margin: 0 auto; /* 가운데 정렬 */
 }
 
 .whattodo {
@@ -819,5 +888,59 @@ footer .copyright {
   .related-site select {
     width: 100%;
     max-width: 250px;
+  }
+}
+
+/* =============================
+  information
+============================= */
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.btn-box {background-color: #e5f1ff;  /* 중간 회색톤 */
+  border-radius: 16px;
+  padding: 2rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-box:hover {
+  transform: scale(1.06);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-image {
+  width: 80px;       /* ✅ 이미지 크기 조절 */
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.label {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .button-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .button-grid {
+    grid-template-columns: 1fr;
   }
 }

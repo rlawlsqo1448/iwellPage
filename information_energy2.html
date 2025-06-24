@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light">
@@ -48,33 +48,31 @@
 </header>
 
 
-    <!-- 오시는길길 -->
-        <section class="location">
-            <div class="location-wrapper">
-                <h2 class="location-title">오시는 길</h2>
-                <p class="location-subtext">주식회사 아이웰에 방문하시는 길을 안내드립니다.</p>
+    <!-- 사업 안내내 -->
+      <div class="button-grid">
+  <a href="information_energy.html" class="btn-box">
+    <img src="images/in4.png" alt="에너지 진단 및 컨설팅" class="btn-image" />
+    <div class="label">에너지 진단 및 지원사업 매칭</div>
+  </a>
+  <a href="information_energy2.html"  class="btn-box">
+    <img src="images/in1.png" alt="정부지원사업 연계" class="btn-image" />
+    <div class="label">에너지 경영 시스템</div>
+  </a>
+  <a href="information_esg.html" class="btn-box">
+    <img src="images/in2.png" alt="에너지경영시스템(EnMS)" class="btn-image" />
+    <div class="label">ESG 및 기후변화 대응 컨설팅</div>
+  </a>
+</div>
 
-                <div class="map-box">
-                    <!-- 카카오 지도 퍼가기 코드 -->
-                    <div style="font:normal normal 400 12px/normal dotum, sans-serif; width:100%; max-width:800px; height:auto; margin: 0 auto;">
-                        <div style="height: 360px;">
-                            <a href="https://map.kakao.com/?urlX=961108.0000002777&amp;urlY=516391.0000000091&amp;name=%EA%B2%BD%EB%82%A8%20%EC%96%91%EC%82%B0%EC%8B%9C%20%EC%96%91%EC%82%B0%EC%97%AD9%EA%B8%B8%2017&amp;map_type=TYPE_MAP&amp;from=roughmap" target="_blank">
-                            <img class="map" src="http://t1.daumcdn.net/roughmap/imgmap/a28f8d042fa8dcf9b5d296d8ccac51d8ff35ff7a8a4974d91690c3854f9d2b2d" width="100%" height="360px" style="border:1px solid #ccc;">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="location-info">
-                        <h3>회사 주소</h3>
-                        <p>도로명 주소 : 경상남도 양산시 양산역9길 17, 306호 (중부동, 비에스 빌딩)</p>
-                        <p>지번 주소 : 경상남도 양산시 중부동 688-16, 306호 (중부동, 비에스 빌딩)</p>
-                        <h3>대중교통</h3>
-                        <p>부산지하철 2호선 양산역(2번출구), 도보 8분</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <div class="business-section" id="enms">
+    <div class="cards-header">
+        <h3>에너지 경영 시스템(EnMS)</h3>
+    </div>
+    <section class="pic-card">
+        <img src="images/businessField_EnMS.png" alt="EnMS" class="whattodo">
+    </section>
+    </div>
 
-        
     <!-- 푸터 -->
     <footer>
         <div class="footer-container">
@@ -92,7 +90,7 @@
             <p class="copyright">&copy; 2025 주식회사 아이웰 All Rights Reserved.</p>
             </div>
 
-            <!-- 관련 사이트 드롭다운 
+            <!-- 관련 사이트 드롭다운
             <div class="related-site">
             <label for="family-site">관련 사이트</label><br />
             <select id="family-site" onchange="goToSite(this)">
@@ -103,21 +101,21 @@
                 <option value="https://www.g2b.go.kr/">나라장터</option>
                 <option value="https://www.bojo.go.kr/bojo.do">e나라도움</option>
             </select>
-            </div>-->
+            </div> -->
         </div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
     <script>
-		function goToSite(selectElement) {
-			const url = selectElement.value;
-			if (url) {
-				window.open(url, "_blank");
-			}
-		}
-	</script>
-  <!-- ✅ 햄버거 메뉴 토글 함수 -->
+            function goToSite(selectElement) {
+                const url = selectElement.value;
+                if (url) {
+                    window.open(url, "_blank");
+                }
+            }
+        </script>
+        <!-- ✅ 햄버거 메뉴 토글 함수 -->
 <script>
   function toggleMobileMenu() {
     const nav = document.querySelector('.main-nav');

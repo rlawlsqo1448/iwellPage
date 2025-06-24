@@ -36,10 +36,9 @@
         <li>
           <a href="#">사업안내</a>
           <ul class="dropdown">
-            <li><a href="information.html#energy">중소기업 에너지 진단</a></li>
-            <li><a href="information.html#government">정부지원사업</a></li>
-            <li><a href="information.html#enms">에너지 경영 시스템</a></li>
-            <li><a href="information.html#esg">ESG 대응</a></li>
+            <li><a href="information_energy.html">에너지 진단 및 지원사업 매칭</a></li>
+            <li><a href="information_energy2.html">에너지 경영 시스템</a></li>
+            <li><a href="information_esg.html">ESG 및 기후변화 대응 컨설팅</a></li>
           </ul>
         </li>
         <li><a href="notice.html">공지사항</a></li>
@@ -85,13 +84,47 @@
 
 
   <!-- 회사 설명 이미지 -->
-  <section class="what">
-    <img src="images/index/whattodo.png" alt="회사설명" />
-  </section>
-  
-  <section class="what">
+<section class="info-section">
+  <div class="info-container">
+    <div class="info-image">
+      <img src="images/index/whattodo.png" alt="버스킹 이미지" />
+    </div>
+    <div class="info-text">
+      <h2>환경 컨설팅 전문 기업</h2>
+      <p>
+        중소기업 지속가능한 성장을 위한 파트너<br />
+        컨설팅부터 EnMS, ESG, CBAM까지<br />
+        기업 환경엔 바로 저희 아이웰입니다.<br />
+      </p>
+      <a href="information_energy.html" class="info-button">더 알아보기 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ 섹션 구분선 -->
+<div class="section-divider"></div>
+
+  <!-- 회사 설명 이미지2 -->
+<section class="info-section">
+  <div class="info-container">
+    <div class="info-text">
+      <h2>다년간 축적된 컨설팅 경험</h2>
+<p>
+  기업들이 선택한 신뢰받은 기업<br />
+  지금까지 <strong id="projectCount">0</strong>개의 사업을 수행하며<br />
+  <strong id="companyCount">0</strong>개 기업과 함께한 그 경험을 믿어보세요.
+</p>
+    </div>
+
+    <div class="info-image">
     <img src="images/index/whattodo2.png" alt="회사설명" />
-  </section>
+    </div>
+  </div>
+</section>
+  
+
+<!-- ✅ 섹션 구분선 -->
+<div class="section-divider"></div>
 
   <!-- 푸터 -->
   <footer>
@@ -173,6 +206,43 @@
         }
       });
     });
+  });
+</script>
+<script>
+  function animateNumber(id, end, duration = 1500) {
+    const element = document.getElementById(id);
+    let start = 0;
+    const range = end - start;
+    const increment = end > start ? 1 : -1;
+    const stepTime = Math.abs(Math.floor(duration / range));
+
+    const timer = setInterval(() => {
+      start += increment;
+      element.textContent = start.toLocaleString();
+      if (start === end) {
+        clearInterval(timer);
+      }
+    }, stepTime);
+  }
+
+  // Intersection Observer 사용해서 스크롤 도달 감지
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateNumber("projectCount", 76);
+        animateNumber("companyCount", 641);
+        observer.disconnect(); // 한 번 실행 후 감지 종료
+      }
+    });
+  }, {
+    threshold: 0.6 // 요소가 60% 이상 보일 때 작동
+  });
+
+  window.addEventListener("DOMContentLoaded", () => {
+    const target = document.getElementById("projectCount");
+    if (target) {
+      observer.observe(target);
+    }
   });
 </script>
 </body>
